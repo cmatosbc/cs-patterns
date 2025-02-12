@@ -1,4 +1,4 @@
-class Adaptee
+public class Adaptee
 {
     public void SpecificRequest()
     {
