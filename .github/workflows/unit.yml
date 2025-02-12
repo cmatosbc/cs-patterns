@@ -20,7 +20,7 @@ jobs:
         dotnet-version: '6.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore ExampleProject.sln # Specify your solution file here
+      run: dotnet restore ExampleSolution.sln # Specify your solution file here
 
     - name: Generate Tests
       run: |
