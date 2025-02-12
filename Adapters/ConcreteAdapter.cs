@@ -13,12 +13,3 @@ public class ConcreteAdapter : AdapterBase
         _adaptee.SpecificRequest();
     }
 }
-
-// File: Adapters/Examples/Adaptee.cs
-public class Adaptee
-{
-    public void SpecificRequest()
-    {
-        Console.WriteLine("Called SpecificRequest()");
-    }
-}
