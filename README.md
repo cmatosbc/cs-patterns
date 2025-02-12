@@ -1,3 +1,5 @@
+
+```markdown
 # cs-patterns
 C# Applied Design Patterns
 
@@ -68,3 +70,183 @@ public class DataAccess : IDataAccess
         }
     }
 }
+```
+
+## Adapter Pattern
+
+The Adapter pattern is used to allow incompatible interfaces to work together. It acts as a bridge between two incompatible interfaces.
+
+### Example
+
+```csharp
+public interface ITarget
+{
+    void Request();
+}
+
+public class Adaptee
+{
+    public void SpecificRequest()
+    {
+        Console.WriteLine("Specific request.");
+    }
+}
+
+public class Adapter : ITarget
+{
+    private readonly Adaptee _adaptee;
+
+    public Adapter(Adaptee adaptee)
+    {
+        _adaptee = adaptee;
+    }
+
+    public void Request()
+    {
+        _adaptee.SpecificRequest();
+    }
+}
+```
+
+## Singleton Pattern
+
+The Singleton pattern ensures that a class has only one instance and provides a global point of access to it.
+
+### Example
+
+```csharp
+public class Singleton
+{
+    private static Singleton _instance;
+
+    private Singleton() { }
+
+    public static Singleton Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new Singleton();
+            }
+            return _instance;
+        }
+    }
+
+    public void DoSomething()
+    {
+        Console.WriteLine("Singleton instance is working.");
+    }
+}
+```
+
+## Factory Pattern
+
+The Factory pattern defines an interface for creating an object but lets subclasses alter the type of objects that will be created.
+
+### Example
+
+```csharp
+public abstract class Product
+{
+    public abstract void DoWork();
+}
+
+public class ConcreteProductA : Product
+{
+    public override void DoWork()
+    {
+        Console.WriteLine("Product A is working.");
+    }
+}
+
+public class ConcreteProductB : Product
+{
+    public override void DoWork()
+    {
+        Console.WriteLine("Product B is working.");
+    }
+}
+
+public abstract class Creator
+{
+    public abstract Product FactoryMethod();
+
+    public void AnOperation()
+    {
+        var product = FactoryMethod();
+        product.DoWork();
+    }
+}
+
+public class ConcreteCreatorA : Creator
+{
+    public override Product FactoryMethod()
+    {
+        return new ConcreteProductA();
+    }
+}
+
+public class ConcreteCreatorB : Creator
+{
+    public override Product FactoryMethod()
+    {
+        return new ConcreteProductB();
+    }
+}
+```
+
+## NuGet Package
+
+To include this library in your project, you can add it as a NuGet package. Follow these steps to create and publish the package:
+
+1. Create a `.nuspec` file:
+
+```xml
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>cs-patterns</id>
+    <version>1.0.0</version>
+    <title>C# Applied Design Patterns</title>
+    <authors>cmatosbc</authors>
+    <owners>cmatosbc</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/cmatosbc/cs-patterns</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package provides C# implementations of various design patterns.</description>
+    <releaseNotes>Initial release of C# Applied Design Patterns.</releaseNotes>
+    <tags>csharp design patterns</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\netstandard2.0\*.dll" target="lib\netstandard2.0" />
+  </files>
+</package>
+```
+
+2. Pack the project:
+
+```sh
+dotnet pack
+```
+
+3. Publish the package:
+
+```sh
+dotnet nuget push <path-to-nupkg-file> -k <api-key> -s https://api.nuget.org/v3/index.json
+```
+
+4. Install the package in your project using the NuGet CLI:
+
+```sh
+dotnet add package cs-patterns --version 1.0.0
+```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or new patterns you'd like to see included.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+```
