@@ -1,3 +1,4 @@
+
 name: Generate and Run xUnit Tests
 
 on:
@@ -31,7 +32,7 @@ jobs:
       run: dotnet build --no-restore
 
     - name: Run Tests
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal ./path/to/your/test/project.csproj
 
     - name: Report Test Results
       if: always()
