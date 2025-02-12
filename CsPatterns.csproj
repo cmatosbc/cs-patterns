@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>cs-patterns</id>
+    <version>1.0.0</version>
+    <title>C# Applied Design Patterns</title>
+    <authors>cmatosbc</authors>
+    <owners>cmatosbc</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/cmatosbc/cs-patterns</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package provides C# implementations of various design patterns.</description>
+    <releaseNotes>Initial release of C# Applied Design Patterns.</releaseNotes>
+    <tags>csharp design patterns</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\netstandard2.0\*.dll" target="lib\netstandard2.0" />
+  </files>
+</package>
