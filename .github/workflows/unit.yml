@@ -28,7 +28,7 @@ jobs:
         echo "Generating tests"
 
     - name: Build
-      run: dotnet build ExampleProject.sln --no-restore # Specify your solution file here
+      run: dotnet build ExampleSolution.sln --no-restore # Specify your solution file here
 
     - name: Run Tests
       run: dotnet test --no-build --verbosity normal ./ExampleProject.csproj
