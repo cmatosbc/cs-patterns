@@ -32,7 +32,7 @@ jobs:
       run: dotnet build --no-restore
 
     - name: Run Tests
-      run: dotnet test --no-build --verbosity normal https://github.com/cmatosbc/cs-patterns/ExampleProject.csproj
+      run: dotnet test --no-build --verbosity normal ./ExampleProject.csproj
 
     - name: Report Test Results
       if: always()
