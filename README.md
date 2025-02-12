@@ -1,4 +1,5 @@
 # cs-patterns
+[![Generate and Run xUnit Tests](https://github.com/cmatosbc/cs-patterns/actions/workflows/unit.yml/badge.svg)](https://github.com/cmatosbc/cs-patterns/actions/workflows/unit.yml)
 C# Applied Design Patterns
 
 ## Overview
