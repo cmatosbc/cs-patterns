@@ -1,5 +1,17 @@
 # cs-patterns
-C# Applied Design Patterns 
+C# Applied Design Patterns
+
+## Overview
+This repository contains implementations of various design patterns in C#. It serves as a learning resource for developers who want to understand and apply design patterns in their C# projects.
+
+## Table of Contents
+- [Service Locator Pattern](#service-locator-pattern)
+- [Adapter Pattern](#adapter-pattern)
+- [Singleton Pattern](#singleton-pattern)
+- [Factory Pattern](#factory-pattern)
+- [NuGet Package](#nuget-package)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Service Locator Pattern
 
@@ -56,4 +68,3 @@ public class DataAccess : IDataAccess
         }
     }
 }
-```
