@@ -1,5 +1,5 @@
 // File: Adapters/Examples/Program.cs
-class Program
+class Programm
 {
     static void Mmain(string[] args)
     {
